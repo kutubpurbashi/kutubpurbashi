@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kutubpurbashi News</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: #f4f6f8;
+      color: #333;
+      animation: fadeIn 1.5s ease;
+    }
+
+    nav {
+      background: linear-gradient(90deg, #2e8b57, #3cb371);
+      color: white;
+      padding: 12px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+      flex-wrap: wrap;
+    }
+
+    nav h1 {
+      font-size: 22px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      animation: slideIn 1s ease;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    nav ul li a {
+      position: relative;
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      padding: 5px 0;
+      transition: color 0.3s ease;
+    }
+
+    nav ul li a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -3px;
+      width: 0%;
+      height: 2px;
+      background: white;
+      transition: width 0.3s ease;
+    }
+
+    nav ul li a:hover::after,
+    nav ul li a.active::after {
+      width: 100%;
+    }
+
+    .welcome {
+      text-align: center;
+      margin: 25px 10px;
+      font-size: 26px;
+      color: #2e8b57;
+      font-weight: 600;
+      animation: welcomeFade 2s ease;
+    }
+
+    .welcome span { color: #3cb371; }
+
+    .card-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 20px;
+      animation: fadeUp 1.2s ease;
+    }
+
+    .card {
+      background: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+    }
+
+    .card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .card-content {
+      padding: 15px;
+    }
+
+    .card-content h3 {
+      color: #2e8b57;
+      margin-bottom: 8px;
+      font-size: 18px;
+    }
+
+    .card-content p {
+      font-size: 14px;
+      color: #555;
+    }
+
+    /* ---------- Animations ---------- */
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes slideIn { from { transform: translateX(-50px); opacity: 0; } to { transform: translateX(0); opacity: 1; } }
+    @keyframes welcomeFade { 0% { opacity: 0; transform: translateY(20px); } 100% { opacity: 1; transform: translateY(0); } }
+
+    /* ---------- Responsive Design ---------- */
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      nav ul {
+        margin-top: 10px;
+        gap: 15px;
+        justify-content: center;
+      }
+
+      .welcome {
+        font-size: 22px;
+        margin: 20px;
+      }
+
+      .card img {
+        height: 160px;
+      }
+
+      .card-content h3 {
+        font-size: 16px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .welcome {
+        font-size: 18px;
+      }
+
+      .card-container {
+        padding: 10px;
+        gap: 15px;
+      }
+
+      .card-content p {
+        font-size: 13px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <h1>Kutubpurbashi</h1>
+  <ul>
+    <li><a href="index.html" class="active">Home</a></li>
+    <li><a href="news.html">News</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="welcome">
+  🌿 Welcome to <span>Kutubpurbashi News</span> 🌿
+</div>
+
+<div class="card-container">
+  <a href="news1.html" class="card">
+    <img src="download.jfif" alt="news1">
+    <div class="card-content">
+      <h3>গ্রামের উন্নয়ন প্রকল্প শুরু</h3>
+      <p>কুতুবপুরে নতুন রাস্তা ও ড্রেনেজ নির্মাণের কাজ শুরু হয়েছে। স্থানীয়রা আনন্দিত।</p>
+    </div>
+  </a>
+
+  <a href="news2.html" class="card">
+    <img src="sc.jfif" alt="news2">
+    <div class="card-content">
+      <h3>বিদ্যালয়ে বার্ষিক ক্রীড়া প্রতিযোগিতা</h3>
+      <p>কুতুবপুর উচ্চ বিদ্যালয়ে অনুষ্ঠিত হলো বার্ষিক ক্রীড়া প্রতিযোগিতা।</p>
+    </div>
+  </a>
+
+  <a href="news3.html" class="card">
+    <img src="bz.jfif" alt="news3">
+    <div class="card-content">
+      <h3>হাটে নতুন বাজার উদ্বোধন</h3>
+      <p>গ্রামীণ অর্থনীতি আরও সমৃদ্ধ করতে কুতুবপুরে নতুন বাজারের উদ্বোধন করা হয়েছে।</p>
+    </div>
+  </a>
+
+  <a href="news4.html" class="card">
+    <img src="ag.jfif" alt="news4">
+    <div class="card-content">
+      <h3>কৃষিতে নতুন প্রযুক্তির ব্যবহার</h3>
+      <p>চাষীরা আধুনিক কৃষি প্রযুক্তি ব্যবহার শুরু করেছেন, ফলে উৎপাদন বেড়েছে।</p>
+    </div>
+  </a>
+
+  <a href="news5.html" class="card">
+    <img src="ss.jfif" alt="news5">
+    <div class="card-content">
+      <h3>সামাজিক উন্নয়ন সভা অনুষ্ঠিত</h3>
+      <p>স্থানীয় কমিউনিটি সেন্টারে অনুষ্ঠিত হলো সমাজকল্যাণ সভা।</p>
+    </div>
+  </a>
+</div>
+    
+</body>
+</html>

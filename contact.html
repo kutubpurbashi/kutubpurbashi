@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact - Kutubpurbashi News</title>
+
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+<style>
+/* ---------- Gradient Background ---------- */
+body {
+  font-family: 'Poppins', sans-serif;
+  margin:0; padding:0;
+  min-height:100vh;
+  background: linear-gradient(270deg, #2e8b57, #3cb371, #2e8b57);
+  background-size: 600% 600%;
+  animation: gradientBG 15s ease infinite;
+  color: #333;
+}
+
+/* ---------- Navbar ---------- */
+nav {
+  background: linear-gradient(90deg, #2e8b57, #3cb371);
+  color: white;
+  padding: 10px 20px; /* কমানো হয়েছে */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+nav h1 { 
+  font-size: 20px; 
+  letter-spacing: 1px; 
+  margin: 0;
+}
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 15px; /* gap কমানো হয়েছে */
+  margin: 0;
+}
+nav ul li { cursor: pointer; transition: 0.3s; }
+nav ul li:hover { transform: scale(1.05); text-shadow: 0 0 5px white; }
+
+@media(max-width:600px){
+  nav ul { display:none; }
+  nav h1 { text-align:center; width:100%; font-size:18px; }
+}
+
+/* ---------- Scroll Reveal ---------- */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease;
+}
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ---------- Contact Section ---------- */
+.contact-section {
+  padding:60px 20px;
+  display:flex;
+  justify-content:center;
+}
+.contact-section .container {
+  max-width:600px;
+  width:100%;
+  background:white;
+  padding:40px 30px;
+  border-radius:12px;
+  box-shadow:0 6px 20px rgba(0,0,0,0.1);
+  text-align:center;
+}
+.contact-section h2 { color:#2e8b57; margin-bottom:10px; font-size:28px; }
+.contact-section p { color:#555; margin-bottom:30px; font-size:15px; }
+.contact-form { display:flex; flex-direction:column; gap:15px; }
+.contact-form input, .contact-form textarea {
+  padding:12px 15px; border-radius:8px; border:1px solid #ccc;
+  font-size:14px; transition:border 0.3s, box-shadow 0.3s;
+}
+.contact-form input:focus, .contact-form textarea:focus {
+  border-color:#2e8b57; box-shadow:0 0 8px rgba(46,139,87,0.2); outline:none;
+}
+.contact-form button {
+  padding:12px; border:none; border-radius:8px; background:#2e8b57;
+  color:white; font-weight:600; cursor:pointer; transition:background 0.3s, transform 0.2s;
+}
+.contact-form button:hover { background:#3cb371; transform:translateY(-2px); }
+
+/* ---------- Footer ---------- */
+.footer {
+  background: #2e8b57;
+  color: white;
+  padding: 40px 20px 20px 20px;
+  font-family: 'Poppins', sans-serif;
+}
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  max-width: 1000px;
+  margin: auto;
+}
+.footer-links, .footer-social { margin-bottom: 20px; }
+.footer-links h4, .footer-social h4 { margin-bottom: 15px; font-size: 18px; }
+.footer-links ul { list-style: none; }
+.footer-links ul li { margin-bottom: 10px; }
+.footer-links ul li a { color: white; text-decoration: none; transition: color 0.3s; }
+.footer-links ul li a:hover { color: #3cb371; }
+.footer-social .social-icons a { display: inline-block; margin-right: 15px; transition: transform 0.3s; }
+.footer-social .social-icons a:hover { transform: scale(1.2); }
+.footer-bottom { text-align: center; border-top: 1px solid rgba(255,255,255,0.3); padding-top: 15px; margin-top: 20px; font-size: 14px; }
+
+@keyframes gradientBG {
+  0%{background-position:0% 50%;}
+  50%{background-position:100% 50%;}
+  100%{background-position:0% 50%;}
+}
+
+@media(max-width:600px){
+  .footer-container { flex-direction: column; align-items: center; text-align: center; }
+  .footer-links, .footer-social { margin-bottom: 15px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ---------- Navbar ---------- -->
+<nav>
+  <h1>Kutubpurbashi</h1>
+  <ul>
+    <li>Home</li>
+    <li>News</li>
+    <li>About</li>
+    <li>Contact</li>
+  </ul>
+</nav>
+
+<!-- ---------- Contact Section ---------- -->
+<section class="contact-section reveal">
+  <div class="container">
+    <h2>Contact / Detail Page</h2>
+    <p>আপনি আমাদের সঙ্গে যোগাযোগ করতে পারেন নিচের ফর্মের মাধ্যমে।</p>
+    <form id="contact-form" class="contact-form">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+      <p id="status" style="margin-top:10px;"></p>
+    </form>
+  </div>
+</section>
+
+<!-- ---------- Footer ---------- -->
+<footer class="footer reveal">
+  <div class="footer-container">
+    <div class="footer-links">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="news.html">News</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-social">
+      <h4>Follow Us</h4>
+      <div class="social-icons">
+        <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png" alt="Facebook"></a>
+        <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png" alt="Twitter"></a>
+        <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/2111/2111463.png" alt="Instagram"></a>
+        <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733553.png" alt="LinkedIn"></a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2025 Kutubpurbashi News. All Rights Reserved.</p>
+  </div>
+</footer>
+
+<!-- ---------- JS ---------- -->
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+<script>
+emailjs.init("YOUR_USER_ID"); // EmailJS User ID
+
+// Form Submit
+document.getElementById('contact-form').addEventListener('submit', function(e){
+  e.preventDefault();
+  const status = document.getElementById('status');
+  emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', this)
+  .then(() => { status.innerHTML="Message sent successfully ✅"; status.style.color="green"; this.reset(); },
+        (err) => { status.innerHTML="Oops! Something went wrong ❌"; status.style.color="red"; console.error(err); });
+});
+
+// ---------- Scroll Reveal ----------
+const reveals = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver((entries)=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){ entry.target.classList.add('active'); }
+  });
+},{ threshold:0.1 });
+reveals.forEach(r=>observer.observe(r));
+</script>
+
+</body>
+</html>

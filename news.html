@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>News - Kutubpurbashi News</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+    body { background: #f4f6f8; color: #333; }
+
+    /* ---------- Navbar ---------- */
+    nav {
+      background: linear-gradient(90deg, #2e8b57, #3cb371);
+      color: white;
+      padding: 12px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      flex-wrap: wrap;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    }
+
+    nav h1 { font-size: 22px; font-weight: 600; }
+    nav ul { list-style: none; display: flex; gap: 18px; flex-wrap: wrap; }
+    nav ul li a { color: white; text-decoration: none; font-weight: 500; padding: 5px 0; transition: 0.3s; position: relative; }
+    nav ul li a::after {
+      content: "";
+      position: absolute;
+      bottom: -3px;
+      left: 0;
+      width: 0%;
+      height: 2px;
+      background: white;
+      transition: width 0.3s ease;
+    }
+    nav ul li a:hover::after, nav ul li a.active::after { width: 100%; }
+
+    /* ---------- Container ---------- */
+    .container { padding: 20px; max-width: 1200px; margin: auto; }
+
+    /* ---------- Back Button ---------- */
+    .back-btn {
+      display: inline-block;
+      margin-bottom: 20px;
+      padding: 10px 18px;
+      background: #2e8b57;
+      color: white;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: 0.3s;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    .back-btn:hover { background: #3cb371; transform: translateY(-2px); box-shadow: 0 6px 16px rgba(0,0,0,0.15); }
+
+    /* ---------- News Cards ---------- */
+    .card-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    .news-card {
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .news-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    }
+
+    .news-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+
+    .news-card:hover img { transform: scale(1.05); }
+
+    .news-card-content {
+      padding: 15px 20px;
+    }
+
+    .news-card-content h3 {
+      color: #2e8b57;
+      margin-bottom: 10px;
+      font-size: 18px;
+    }
+
+    .news-card-content p {
+      font-size: 14px;
+      color: #555;
+      line-height: 1.5;
+    }
+
+    /* ---------- Responsive ---------- */
+    @media (max-width: 768px) {
+      .news-card img { height: 160px; }
+      .news-card-content h3 { font-size: 16px; }
+      .news-card-content p { font-size: 13px; }
+    }
+
+    @media (max-width: 480px) {
+      .container { padding: 10px; }
+      .back-btn { padding: 8px 14px; font-size: 14px; }
+      .news-card img { height: 140px; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <h1>Kutubpurbashi</h1>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="news.html" class="active">News</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="container">
+  <a href="index.html" class="back-btn">← Back to Home</a>
+
+  <div class="card-container">
+    <a href="news1.html" class="news-card">
+      <img src="download.jfif" alt="news1">
+      <div class="news-card-content">
+        <h3>গ্রামের উন্নয়ন প্রকল্প শুরু</h3>
+        <p>কুতুবপুরে নতুন রাস্তা ও ড্রেনেজ নির্মাণের কাজ শুরু হয়েছে। স্থানীয়রা আনন্দিত।</p>
+      </div>
+    </a>
+
+    <a href="news2.html" class="news-card">
+      <img src="sc.jfif" alt="news2">
+      <div class="news-card-content">
+        <h3>বিদ্যালয়ে বার্ষিক ক্রীড়া প্রতিযোগিতা</h3>
+        <p>কুতুবপুর উচ্চ বিদ্যালয়ে অনুষ্ঠিত হলো বার্ষিক ক্রীড়া প্রতিযোগিতা।</p>
+      </div>
+    </a>
+
+    <a href="news3.html" class="news-card">
+      <img src="bz.jfif" alt="news3">
+      <div class="news-card-content">
+        <h3>হাটে নতুন বাজার উদ্বোধন</h3>
+        <p>গ্রামীণ অর্থনীতি আরও সমৃদ্ধ করতে কুতুবপুরে নতুন বাজারের উদ্বোধন করা হয়েছে।</p>
+      </div>
+    </a>
+
+    <a href="news4.html" class="news-card">
+      <img src="ag.jfif" alt="news4">
+      <div class="news-card-content">
+        <h3>কৃষিতে নতুন প্রযুক্তির ব্যবহার</h3>
+        <p>চাষীরা আধুনিক কৃষি প্রযুক্তি ব্যবহার শুরু করেছেন, ফলে উৎপাদন বেড়েছে।</p>
+      </div>
+    </a>
+
+    <a href="news5.html" class="news-card">
+      <img src="ss.jfif" alt="news5">
+      <div class="news-card-content">
+        <h3>সামাজিক উন্নয়ন সভা অনুষ্ঠিত</h3>
+        <p>স্থানীয় কমিউনিটি সেন্টারে অনুষ্ঠিত হলো সমাজকল্যাণ সভা।</p>
+      </div>
+    </a>
+
+    <!-- নতুন ৫টি কার্ড -->
+    <a href="news6.html" class="news-card">
+      <img src="news6.jfif" alt="news6">
+      <div class="news-card-content">
+        <h3>পরিষ্কার-পরিচ্ছন্নতা অভিযান</h3>
+        <p>গ্রামে নতুন পরিচ্ছন্নতা অভিযান শুরু হয়েছে। স্থানীয়রা সক্রিয়ভাবে অংশ নিচ্ছে।</p>
+      </div>
+    </a>
+
+    <a href="news7.html" class="news-card">
+      <img src="news7.jfif" alt="news7">
+      <div class="news-card-content">
+        <h3>গ্রামীণ স্বাস্থ্য কেন্দ্র উন্নয়ন</h3>
+        <p>নতুন স্বাস্থ্যকেন্দ্র স্থাপন করা হয়েছে, যাতে গ্রামবাসীর স্বাস্থ্যসেবা উন্নত হয়।</p>
+      </div>
+    </a>
+
+    <a href="news8.html" class="news-card">
+      <img src="news8.jfif" alt="news8">
+      <div class="news-card-content">
+        <h3>ফসলের বীমা কার্যক্রম</h3>
+        <p>চাষীদের জন্য নতুন ফসল বীমা কার্যক্রম শুরু হয়েছে, যা ঝুঁকি কমাবে।</p>
+      </div>
+    </a>
+
+    <a href="news9.html" class="news-card">
+      <img src="news9.jfif" alt="news9">
+      <div class="news-card-content">
+        <h3>নারী উদ্যোক্তা সমাবেশ</h3>
+        <p>গ্রামে নারী উদ্যোক্তাদের জন্য বিশেষ সমাবেশ অনুষ্ঠিত হয়েছে।</p>
+      </div>
+    </a>
+
+    <a href="news10.html" class="news-card">
+      <img src="news10.jfif" alt="news10">
+      <div class="news-card-content">
+        <h3>স্থানীয় ক্রীড়া দল গঠন</h3>
+        <p>গ্রামে নতুন ক্রীড়া দল গঠন করা হয়েছে, যুবকদের অংশগ্রহণ বাড়াতে।</p>
+      </div>
+    </a>
+</div>
+
+
+</body>
+</html>
